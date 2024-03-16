@@ -1,0 +1,27 @@
+endpoints:
+  - path: /tokio-blog.xml
+    note: Full text of Tokio blog
+    source: https://tokio.rs/_next/static/feed.xml
+    filters:
+      - full_text: {}
+      - simplify_html: {}
+
+  - path: /hackernews.xml
+    note: Full text of Hacker News
+    source: https://news.ycombinator.com/rss
+    filters:
+      - full_text:
+          simplify: true
+          append_mode: true
+
+  - path: /brisbane-times-qld.xml
+    note: Brisbane Times
+    source: https://www.brisbanetimes.com.au/rss/national/queensland.xml
+    filters:
+      - full_text: {}
+
+  - path: /abc-news-just-in.xml
+    note: ABC News Just In
+    source: http://www.abc.net.au/news/feed/51120/rss.xml
+    filters:
+      - full_text: {}

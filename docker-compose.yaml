@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  rss-funnel:
+    image: ghcr.io/shouya/rss-funnel:latest
+    ports:
+      - 4080:4080
+    volumes:
+      - ./rss-funnel/funnel.yaml:/funnel.yaml
+    environment:
+      RSS_FUNNEL_CONFIG: /funnel.yaml
+      RSS_FUNNEL_BIND: 0.0.0.0:4080
